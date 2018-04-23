@@ -1,6 +1,6 @@
 const celciusInput = document.querySelector('#celcius > input');
 const fahrenheitInput = document.querySelector('#fahrenheit > input');
-const kalvinInput = document.querySelector('#kalvin > input');
+const kelvinInput = document.querySelector('#kelvin > input');
 
 
 
@@ -9,7 +9,7 @@ main();
 function main(){
 	celciusInput.addEventListener('input', celciusConvertRest);
 	fahrenheitInput.addEventListener('input', fahrenheitConvertRest);
-	kalvinInput.addEventListener('input', kalvinConverRest);
+	kelvinInput.addEventListener('input', kelvinConverRest);
 }
 
 function roundNumber(num) {
@@ -22,7 +22,7 @@ function celciusConvertRest() {
 	const kTemp = cTemp + 273.15;
 
 	fahrenheitInput.value = roundNumber(fTemp);
-	kalvinInput.value = roundNumber(kTemp);
+	kelvinInput.value = roundNumber(kTemp);
 }
 
 function fahrenheitConvertRest() {
@@ -31,11 +31,11 @@ function fahrenheitConvertRest() {
 	const kTemp = (fTemp + 459.67) * (5/9);
 
 	celciusInput.value = roundNumber(cTemp);
-	kalvinInput.value = roundNumber(kTemp);
+	kelvinInput.value = roundNumber(kTemp);
 }
 
-function kalvinConverRest() {
-	const kTemp = parseFloat(kalvinInput.value);
+function kelvinConverRest() {
+	const kTemp = parseFloat(kelvinInput.value);
 	const cTemp = (kTemp - 273.15);
 	const fTemp = (9/5) * (kTemp - 273) + 32;
 
